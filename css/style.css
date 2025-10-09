@@ -1,10 +1,10 @@
-/* Color Palette and Global Styles */
+/* ======== VARIABLES Y ESTILOS GLOBALES ======== */
 :root {
-    --primary-blue: #0A74DA; /* A strong, reliable blue */
-    --accent-yellow: #FFC107; /* A bright, attention-grabbing yellow */
-    --dark-text: #212529;
-    --light-text: #FFFFFF;
-    --main-font: 'Helvetica Neue', Arial, sans-serif;
+    --color-azul: #0a74da;
+    --color-amarillo: #ffd700;
+    --color-negro: #121212;
+    --color-blanco: #ffffff;
+    --color-fondo-dark: #1a1a1a;
 }
 
 * {
@@ -13,108 +13,258 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: var(--main-font);
-    background-color: var(--light-text);
-    color: var(--dark-text);
+html {
+    scroll-behavior: smooth;
 }
 
-/* Header and Navigation Bar */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 6rem 1rem;
+}
+
+.section-titulo {
+    font-size: 2.5rem;
+    color: var(--color-azul);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-descripcion {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* ======== NAVEGACIÓN ======== */
 .header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 100;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Class added via JavaScript on scroll */
-.header-scrolled {
-    background-color: rgba(10, 116, 218, 0.9); /* 90% opaque primary blue */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.header.scrolled {
+    background-color: var(--color-negro);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.navbar {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    height: 70px;
 }
 
 .nav-logo {
-    font-size: 1.8rem;
+    color: var(--color-amarillo);
     font-weight: bold;
-    color: var(--accent-yellow);
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
 .nav-menu {
-    list-style: none;
     display: flex;
+    align-items: center;
+    list-style: none;
     gap: 2rem;
 }
 
 .nav-link {
-    color: var(--light-text);
+    color: var(--color-blanco);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.2s;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .nav-link:hover {
-    color: var(--accent-yellow);
+    color: var(--color-amarillo);
 }
 
-/* Hero Section */
-.hero-section {
-    background-color: var(--primary-blue);
-    color: var(--light-text);
+.nav-toggle {
+    display: none; /* Oculto en escritorio */
+    cursor: pointer;
+}
+
+.nav-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-blanco);
+    transition: all 0.3s ease-in-out;
+}
+
+/* ======== SECCIÓN PRINCIPAL (INICIO) ======== */
+.section-inicio {
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
+    color: var(--color-blanco);
+    background-image: 
+        linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.inicio-contenido {
+    max-width: 800px;
     padding: 0 1rem;
 }
 
-.hero-content h1 {
+.inicio-titulo {
     font-size: 3.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.cta-button {
+.inicio-subtitulo {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* ======== SECCIÓN SERVICIOS ======== */
+.section-dark {
+    background-color: var(--color-fondo-dark);
+    color: var(--color-negro);
+}
+
+.section-dark .section-descripcion {
+    color: #ccc;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.servicio-card {
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-amarillo);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.servicio-titulo {
+    color: var(--color-amarillo);
+    margin-bottom: 1rem;
+}
+
+/* ======== SECCIÓN CONTACTO (ACTUALIZADO) ======== */
+.contact-cta {
+    text-align: center;
+}
+
+.btn-cta {
     display: inline-block;
-    background-color: var(--accent-yellow);
-    color: var(--dark-text);
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
     margin-top: 1.5rem;
-    transition: transform 0.2s;
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.cta-button:hover {
-    transform: translateY(-3px);
+.btn-cta:hover {
+    background-color: #085aab;
+    transform: scale(1.05);
 }
 
-/* Content Section */
-.content-section {
-    padding: 4rem 5%;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
+/* ======== FOOTER ======== */
+.footer {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 2rem;
 }
 
-/* Responsive Design */
+/* ======== DISEÑO RESPONSIVO (ACTUALIZADO) ======== */
 @media (max-width: 768px) {
-    .hero-content h1 {
+    /* --- Ajustes generales --- */
+    .section {
+        padding: 4rem 1rem;
+    }
+    .section-titulo {
+        font-size: 2rem;
+    }
+    .inicio-titulo {
         font-size: 2.5rem;
     }
+    .inicio-subtitulo {
+        font-size: 1.2rem;
+    }
 
+    /* --- Menú de hamburguesa --- */
+    .nav-toggle {
+        display: block; /* Muestra el icono */
+    }
+    
     .nav-menu {
-        /* On smaller screens, you might hide this and add a hamburger menu icon */
-        display: none;
+        position: fixed;
+        top: 70px; /* Debajo del header */
+        right: -100%; /* Empieza fuera de la pantalla */
+        width: 100%;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        background-color: var(--color-negro);
+        transition: right 0.4s ease-in-out;
+    }
+
+    .nav-menu.active {
+        right: 0; /* Mueve el menú a la pantalla */
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+    }
+    
+    /* Animación del icono de hamburguesa a "X" */
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- Servicios --- */
+    .servicios-grid {
+        grid-template-columns: 1fr;
     }
 }
