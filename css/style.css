@@ -119,9 +119,7 @@ body {
     align-items: center;
     text-align: center;
     color: var(--color-blanco);
-    background-image: 
-        linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)),
-        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('../img/img1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
