@@ -5,6 +5,7 @@
     --color-negro: #121212;
     --color-blanco: #ffffff;
     --color-fondo-dark: #1a1a1a;
+    --color-gris-claro: #f4f4f4;
 }
 
 * {
@@ -142,39 +143,71 @@ body {
     font-weight: 300;
 }
 
-/* ======== SECCIÓN SERVICIOS ======== */
-.section-dark {
-    background-color: var(--color-fondo-dark);
+/* ======== SECCIÓN QUIÉNES SOMOS (INFORMACIÓN) - NUEVOS ESTILOS ======== */
+.section-info-alt {
+    background-color: var(--color-gris-claro); /* Fondo claro para esta sección */
+    padding-bottom: 4rem; /* Un poco menos de padding abajo */
+}
+
+.section-info-alt .section-titulo {
+    margin-bottom: 2.5rem; /* Más espacio debajo del título */
+}
+
+.info-botones {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem; /* Espacio entre botones y contenido */
+}
+
+.btn-info {
+    display: inline-block;
+    background-color: var(--color-amarillo);
     color: var(--color-negro);
+    padding: 0.8rem 2rem;
+    border-radius: 50px; /* Botones redondeados */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.section-dark .section-descripcion {
-    color: #ccc;
+.btn-info:hover {
+    background-color: #e6c200;
+    transform: translateY(-3px);
 }
 
-.servicios-grid {
+.info-contenido-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center; /* Centra verticalmente el contenido */
 }
 
-.servicio-card {
-    background-color: var(--color-blanco);
-    padding: 2rem;
+.info-imagen {
+    text-align: center;
+}
+
+.info-imagen img {
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
-    border-left: 5px solid var(--color-amarillo);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.servicio-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+.info-texto p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #333;
 }
 
-.servicio-titulo {
-    color: var(--color-amarillo);
-    margin-bottom: 1rem;
+.info-texto p:last-child {
+    margin-bottom: 0;
+}
+
+.info-texto .highlight {
+    font-weight: bold;
+    color: var(--color-azul); /* Para destacar palabras como "confiable" y "calidad" */
 }
 
 /* ======== SECCIÓN CONTACTO (ACTUALIZADO) ======== */
@@ -210,7 +243,7 @@ body {
     padding: 2rem;
 }
 
-/* ======== DISEÑO RESPONSIVO (ACTUALIZADO) ======== */
+/* ======== DISEÑO RESPONSIVO (ACTUALIZADO para info-alt) ======== */
 @media (max-width: 768px) {
     /* --- Ajustes generales --- */
     .section {
@@ -261,6 +294,21 @@ body {
     }
     .nav-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- Sección Info (Quiénes Somos) responsiva --- */
+    .info-contenido-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+        text-align: center; /* Centra el texto */
+    }
+    
+    .info-imagen img {
+        max-width: 80%; /* Ajusta el tamaño de la imagen en móviles */
+        margin-bottom: 2rem; /* Espacio entre imagen y texto */
+    }
+
+    .info-texto p {
+        font-size: 1rem;
     }
 
     /* --- Servicios --- */
