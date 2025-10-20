@@ -1,0 +1,112 @@
+/* ======== SECCIÓN DE PRECIOS (NUEVOS ESTILOS) ======== */
+.section-precios {
+    padding-top: 120px; /* Espacio para el header fijo */
+    background-color: var(--color-blanco);
+    min-height: 80vh;
+}
+
+.pricing-table {
+    width: 100%;
+    margin-top: 3rem;
+    border-collapse: collapse;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Para que el border-radius afecte a los hijos */
+}
+
+.table-row {
+    display: grid;
+    /* 3 columnas: 1.5fr para servicio, 3fr para desc, 1.5fr para precio */
+    grid-template-columns: 1.5fr 3fr 1.5fr; 
+    background-color: var(--color-blanco);
+    border-bottom: 1px solid #eee;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+/* Encabezado de la tabla */
+.table-header {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.table-header .table-cell {
+    padding: 1.2rem 1rem;
+}
+
+/* Celdas de contenido */
+.table-cell {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.table-cell[data-label="Precio"] {
+    font-weight: bold;
+    color: var(--color-azul);
+}
+
+/* Fila de contenido con hover */
+.table-row:not(.table-header):hover {
+    background-color: #f9f9f9;
+}
+
+/* --- RESPONSIVIDAD PARA LA TABLA (Móviles) --- */
+@media (max-width: 768px) {
+    .section-precios {
+        padding-top: 100px;
+    }
+
+    .table-header {
+        display: none; /* Ocultamos el encabezado en móvil */
+    }
+
+    .table-row {
+        grid-template-columns: 1fr; /* Una sola columna */
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .table-cell {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #eee;
+        /* Hacemos que se apilen verticalmente */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .table-cell:last-child {
+        border-bottom: none;
+    }
+
+    /* Añadimos las etiquetas (data-label) antes del contenido */
+    .table-cell::before {
+        content: attr(data-label); /* Toma el texto del atributo 'data-label' */
+        font-weight: bold;
+        color: var(--color-negro);
+        margin-bottom: 0.3rem;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+
+    /* Estilos específicos para la celda de precio en móvil */
+    .table-cell[data-label="Precio"] {
+        flex-direction: row; /* Para que el precio esté al lado de su etiqueta */
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--color-amarillo);
+        color: var(--color-negro);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .table-cell[data-label="Precio"]::before {
+        color: var(--color-negro);
+    }
+}
