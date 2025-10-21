@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Soporte Técnico Pro</title>
+    <link rel="stylesheet" href="css/red_social.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="icon" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">SoportePro</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html#info" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="informativa.html" class="nav-link">¿Quienes Somos?</a></li>
+                <li class="nav-item"><a href="servicio.html" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section section-contacto">
+            <div class="container">
+                <h2 class="section-titulo">Ponte en Contacto</h2>
+                <p class="section-descripcion">Estamos listos para ayudarte. Llena el formulario, llámanos o visítanos en nuestra oficina.</p>
+
+                <div class="contacto-grid">
+                    
+                    <div class="contacto-columna-form">
+                        <h3>Envíanos un Mensaje</h3>
+                        <form class="contact-form-page">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo</label>
+                                <input type="text" id="nombre" placeholder="Tu Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" placeholder="tu@correo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="asunto">Asunto</label>
+                                <input type="text" id="asunto" placeholder="Ej: Problema con mi PC" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" placeholder="Describe tu problema o consulta..." rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                        </form>
+
+                        <div class="contacto-info-adicional">
+                            <h3>Información Directa</h3>
+                            <ul class="contacto-lista-info">
+                                <li><span>&#9993;</span> email@soportepro.com</li>
+                                <li><span>&#9742;</span> +52 55 1234 5678</li>
+                                <li><span>&#9200;</span> Lunes a Viernes, 9:00am - 6:00pm</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contacto-columna-map">
+                        <h3>Nuestra Ubicación</h3>
+                        <p>Visítanos para un diagnóstico en persona. ¡Te esperamos!</p>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.078233777717!2d-99.23199838848486!3d18.97201888214216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd868953d6113b%3A0x1d0a304e38cda69c!2sZ%C3%B3calo%20de%20Cuernavaca!5e0!3m2!1ses-419!2smx!4v1666299100318!5m2!1ses-419!2smx" 
+                                width="600" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Soporte Técnico Pro. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
